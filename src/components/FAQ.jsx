@@ -1,105 +1,72 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, HelpCircle, MessageCircle } from 'lucide-react';
-
-const FAQItem = ({ question, answer, isOpen, toggle }) => (
-  <div className="border-b border-white/5 py-4">
-    <button 
-      onClick={toggle}
-      className="flex items-center justify-between w-full text-left group transition-all"
-    >
-      <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-blue-400' : 'text-slate-200 group-hover:text-blue-300'}`}>
-        {question}
-      </span>
-      <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${isOpen ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-500'}`}>
-        {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-      </div>
-    </button>
-    
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="overflow-hidden"
-        >
-          <p className="text-slate-400 mt-4 leading-relaxed pb-2 italic font-medium">
-            {answer}
-          </p>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
-);
+import { motion } from 'framer-motion';
+import { HelpCircle, ChevronDown } from 'lucide-react';
 
 const FAQ = () => {
-  const mainLink = "https://lbgame777.xyz/2xn84Y";
-  const [openIndex, setOpenIndex] = React.useState(0);
-
   const faqs = [
     {
-      question: "Как найти актуальное рабочее зеркало лакибир?",
-      answer: "Самый простой способ найти рабочее зеркало лакибир — это наш официальный Telegram-бот. Мы обновляем ссылки мгновенно, чтобы вы всегда имели доступ к luckybear казино."
+      q: "Как начать игру в Lucky Bear Casino?",
+      a: "Всё просто! Нажмите кнопку 'Регистрация', заполните короткую форму и подтвердите свой аккаунт. После этого вам станут доступны все игровые автоматы и бонусы нашего клуба."
     },
     {
-      question: "Как работает lucky bear телеграм бот?",
-      answer: "Лаки бир бот — это полноценный доступ к казино прямо в вашем Telegram. Вы можете регистрироваться, пополнять баланс и играть в lucky bear слоты без необходимости переходить на сайт."
+      q: "Какие бонусы доступны новым игрокам?",
+      a: "Мы предлагаем щедрый приветственный пакет: до +600% на первые депозиты. Также регулярно проводятся турниры и акции с ценными призами для всех участников."
     },
     {
-      question: "Как получить lucky bear промокод или купон?",
-      answer: "Промокоды lucky bear регулярно публикуются в нашем официальном канале. Также вы можете получить купон lucky bear, обратившись в службу поддержки через лакибир тг."
+      q: "Как быстро выводятся выигрыши?",
+      a: "Финансовый отдел обрабатывает заявки круглосуточно. На электронные и криптокошельки средства поступают в течение 15-30 минут, на банковские карты — до нескольких часов в зависимости от банка."
     },
     {
-      question: "Безопасно ли играть в luckybear casino на деньги?",
-      answer: "Да, luckybear casino официальный сайт использует передовые технологии шифрования. Все выплаты гарантированы, а игровые автоматы luckybear casino проходят регулярную проверку честности."
+      q: "Есть ли у вас мобильное приложение?",
+      a: "Наш сайт полностью адаптирован под мобильные устройства. Вам не нужно скачивать сторонние программы — просто откройте сайт в браузере смартфона и наслаждайтесь игрой."
     },
     {
-      question: "Как пройти лаки бир регистрация?",
-      answer: "Вы можете пройти регистрацию через lucky bear казино официальный сайт или наш бот. Лаки бир официальный сайт регистрация занимает меньше минуты и требует только минимальные данные."
-    },
-    {
-      question: "Есть ли у luckybear casino мобильная версия?",
-      answer: "Конечно! Сайт luckybear casino идеально оптимизирован для всех типов мобильных устройств. Вы можете играть онлайн в лаки бир казино в любом месте и в любое время."
+      q: "Безопасно ли играть на реальные деньги?",
+      a: "Безусловно. Мы используем сертифицированные ГСЧ (генераторы случайных чисел) и современные протоколы безопасности SSL для защиты ваших транзакций и персональных данных."
     }
   ];
 
   return (
-    <section id="faq" className="py-24 bg-slate-900/30">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold mb-4">
-            <HelpCircle size={16} />
-            <span>Частые вопросы</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            FAQ по <span className="text-blue-500 italic">Lucky Bear</span>
-          </h2>
-          <p className="text-slate-400 text-lg">
-            Узнайте всё о <span className="text-white font-semibold">luckybear casino вход</span>, бонусах и работе нашего бота. 
-            Мы собрали ответы на самые популярные запросы игроков.
-          </p>
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter"
+          >
+            ЧАСТЫЕ <span className="text-blue-500 italic">ВОПРОСЫ</span>
+          </motion.h2>
+          <p className="text-slate-400 font-medium">Всё, что вам нужно знать о работе нашего сервиса в одном месте.</p>
         </div>
-        
-        <div className="glass-morphism rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl">
-          {faqs.map((faq, index) => (
-            <FAQItem 
-              key={index} 
-              {...faq} 
-              isOpen={openIndex === index} 
-              toggle={() => setOpenIndex(openIndex === index ? -1 : index)} 
-            />
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <motion.details
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-slate-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all"
+            >
+              <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center">
+                    <HelpCircle size={20} className="text-blue-500" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">{faq.q}</h3>
+                </div>
+                <ChevronDown size={24} className="text-slate-500 group-open:rotate-180 transition-transform" />
+              </summary>
+              <div className="px-8 pb-8 pt-0">
+                <p className="text-slate-400 leading-relaxed font-medium pl-14">
+                  {faq.a}
+                </p>
+              </div>
+            </motion.details>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm mb-6 uppercase tracking-widest font-bold">
-            Не нашли ответ? Напишите нам в поддержку
-          </p>
-          <a href={mainLink} className="btn-secondary inline-flex items-center gap-2 px-8 py-4 text-lg font-black uppercase shadow-lg shadow-blue-500/10 transition-all hover:scale-105 active:scale-95">
-            <MessageCircle size={22} className="text-blue-400" />
-            Лакибир ТГ Поддержка
-          </a>
         </div>
       </div>
     </section>
