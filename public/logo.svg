@@ -1,23 +1,25 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Blue Outline Shield/Head Shape -->
-  <path d="M256 480L100 400C80 300 60 200 80 100L120 60L180 80L256 50L332 80L392 60L432 100C452 200 432 300 412 400L256 480Z" fill="#000000" stroke="#2563EB" stroke-width="12"/>
+  <!-- Уникальный геометрический щит (Фон) -->
+  <path d="M256 490L70 410C50 300 40 180 70 80L256 30L442 80C472 180 462 300 442 410L256 490Z" fill="#0F172A" stroke="#3B82F6" stroke-width="16" stroke-linejoin="round"/>
   
-  <!-- Bear Head (White) -->
-  <path d="M256 120C180 120 120 180 120 260C120 340 180 400 256 400C332 400 392 340 392 260C392 180 332 120 256 120Z" fill="white"/>
-  <path d="M120 180L100 140L150 130L170 160" fill="white"/> <!-- Left Ear -->
-  <path d="M392 180L412 140L362 130L342 160" fill="white"/> <!-- Right Ear -->
+  <!-- Стилизованная голова медведя (Геометрическая) -->
+  <path d="M256 110L140 230L140 330L256 410L372 330L372 230L256 110Z" fill="white"/>
   
-  <!-- Black Mask/Markings -->
-  <path d="M180 230C160 230 150 260 160 290C170 320 200 300 220 280C200 260 190 230 180 230Z" fill="black"/>
-  <path d="M332 230C352 230 362 260 352 290C342 320 312 300 292 280C312 260 322 230 332 230Z" fill="black"/>
+  <!-- Уши (Треугольные, агрессивные) -->
+  <path d="M140 230L100 170L170 170" fill="white"/>
+  <path d="M372 230L412 170L342 170" fill="white"/>
   
-  <!-- Green Eyes -->
-  <path d="M185 265L205 255L210 275Z" fill="#22C55E"/>
-  <path d="M327 265L307 255L302 275Z" fill="#22C55E"/>
+  <!-- Глазные впадины и Маска (Черный матовый) -->
+  <path d="M180 230L230 230L240 290L160 290L180 230Z" fill="#111827"/>
+  <path d="M332 230L282 230L272 290L352 290L332 230Z" fill="#111827"/>
   
-  <!-- Nose -->
-  <path d="M236 310C236 310 240 330 256 330C272 330 276 310 276 310L256 320L236 310Z" fill="black"/>
+  <!-- Светящиеся зеленые глаза (Киберпанк стиль) -->
+  <rect x="185" y="250" width="25" height="10" rx="2" fill="#10B981 shadow-green-500/50"/>
+  <rect x="302" y="250" width="25" height="10" rx="2" fill="#10B981 shadow-green-500/50"/>
   
-  <!-- Text Area (Bottom) -->
-  <path d="M140 380L256 440L372 380" stroke="white" stroke-width="20" stroke-linecap="round"/>
+  <!-- Нос и Пасть (Минимализм) -->
+  <path d="M236 330L256 350L276 330" stroke="#111827" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Нижний акцентный свет (Синий) -->
+  <path d="M180 430L256 460L332 430" stroke="#3B82F6" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
 </svg>
